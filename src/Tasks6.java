@@ -79,7 +79,7 @@ public class Tasks6 {
 
     /** Функция для перевода слова в свиную латынь*/
     public static String translateWord(String word){
-        if(word.length() == 0)return "";
+        if(word.length() == 0)return "\"\"";
         //Константы гласных, согласных и всех разрешённых символов.
         String vowels = "aeiouyAEIOUY";
         String consonants = "bcdfghjklmnpqrstvwxzBCDFGHJKLMNPQRSTVWXZ";
@@ -108,6 +108,7 @@ public class Tasks6 {
         for(int i = 0; i < words.length; i++){
             words[i] = translateWord(words[i]);
         }
+        words[0] = words[0].substring(0, 1).toUpperCase() + words[0].substring(1).toLowerCase();
         return String.join(" ", words);
     }
 
